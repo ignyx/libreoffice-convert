@@ -23,7 +23,7 @@ describe('convert', () => {
 
 
     it('if an another instance of soffice exists, should convert a word document to text',  (done) => {
-        exec("soffice  --headless")
+        exec("soffice  --headless", { timeout: 1000 })
         // this command create an instance of soffice. This instance will get a failure "Error: source file could not be loaded"
         // but only after we ask a new convert. So this is enought to reproduce fail when an another instance is open
         setTimeout(()=> {
